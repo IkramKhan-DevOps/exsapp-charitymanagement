@@ -1,0 +1,297 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block base_content %}
+    <!-- hero section start -->
+    <section class="section hero-section bg-ico-hero" id="home">
+        <div class="bg-overlay bg-primary"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="text-white-50">
+                        <h1 class="text-white font-weight-semibold mb-3 hero-title">
+                            Event Management System | EMS
+                        </h1>
+                        <p class="font-size-14">
+                            Haven't organized event yet, register yourself and let us know about yourself, select event
+                            plan and let us hold the management, you will be happy.
+                        </p>
+
+                        <div class="button-items mt-4">
+                            <a href="/accounts/signup/"
+                               class="btn btn-success">Join Now</a>
+                            <a href="/accounts/login/"
+                               class="btn btn-light">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+
+    {#    <!-- description start -->#}
+    {#    <section class="section" id="description">#}
+    {#        <div class="container">#}
+    {##}
+    {#            <div class="row mt-4">#}
+    {#                <div class="col-lg-12">#}
+    {#                    {{ site.system_description|safe }}#}
+    {#                </div>#}
+    {#            </div>#}
+    {#            <!-- end row -->#}
+    {#        </div>#}
+    {#        <!-- end container -->#}
+    {#    </section>#}
+    {#    <!-- description end -->#}
+
+    <!-- Roadmap start -->
+    <section class="section bg-white" id="roadmap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mb-5">
+                        <div class="small-title">Timeline</div>
+                        <h4>Development Road map</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row mt-4">
+                <div class="col-lg-12">
+                    <div class="hori-timeline">
+                        <div class="owl-carousel owl-theme events navs-carousel" id="timeline-carousel">
+
+                            <div class="item event-list">
+                                <div>
+                                    <a href="#">
+                                        <div class="event-date">
+                                            <div class="mb-1"><i
+                                                    class="bx bx-calendar"></i> 5th October, 2021
+                                            </div>
+                                            <h5 class="mb-4">10% Project</h5>
+
+                                        </div>
+                                        <div class="event-down-icon">
+                                            <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                        </div>
+
+                                        <div class="mt-3 px-3">
+                                            <p class="text-muted">
+                                                Project Idea, Documentation and Presentations
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="item event-list">
+                                <div>
+                                    <a href="#">
+                                        <div class="event-date">
+                                            <div class="mb-1"><i
+                                                    class="bx bx-calendar"></i> 21st December, 2021
+                                            </div>
+                                            <h5 class="mb-4">30% Project</h5>
+
+                                        </div>
+                                        <div class="event-down-icon">
+                                            <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                        </div>
+
+                                        <div class="mt-3 px-3">
+                                            <p class="text-muted">
+                                                Interface, Prototype, Documentation and Presentation
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="item event-list">
+                                <div>
+                                    <a href="#">
+                                        <div class="event-date">
+                                            <div class="mb-1"><i
+                                                    class="bx bx-calendar"></i> 20th March, 2021
+                                                <small>(Expected)</small>
+                                            </div>
+                                            <h5 class="mb-4">60% Project</h5>
+
+                                        </div>
+                                        <div class="event-down-icon">
+                                            <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                        </div>
+
+                                        <div class="mt-3 px-3">
+                                            <p class="text-muted">
+                                                Customer Portal, Event Booking, Documentation and Presentations
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="item event-list">
+                                <div>
+                                    <a href="#">
+                                        <div class="event-date">
+                                            <div class="mb-1"><i
+                                                    class="bx bx-calendar"></i> 5th June, 2021 <small>(Expected)</small>
+                                            </div>
+                                            <h5 class="mb-4">100% Project</h5>
+
+                                        </div>
+                                        <div class="event-down-icon">
+                                            <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                        </div>
+
+                                        <div class="mt-3 px-3">
+                                            <p class="text-muted">
+                                                Payment System, 3D Module and Fully functional Live Application
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- Roadmap end -->
+
+
+    <!-- Team start -->
+    <section class="section bg-white" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mb-5">
+                        <div class="small-title">Team</div>
+                        <h4>Meet our team</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="col-lg-12">
+                <div class="owl-carousel owl-theme events navs-carousel" id="team-carousel">
+
+                    <div class="item">
+                        <div class="card text-center team-box">
+                            <div class="card-body">
+                                <div>
+                                    <img src="{% static 'images/avatar-2.jpg' %}" alt="" class="rounded">
+                                </div>
+
+                                <div class="mt-3">
+                                    <h5>Haris Abbasi</h5>
+                                    <P class="text-muted mb-0">FA18-BSE-046</P>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-top">
+                                <div class="d-flex mb-0 team-social-links">
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Facebook">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Linkedin">
+                                            <i class="mdi mdi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Google">
+                                            <i class="mdi mdi-google"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card text-center team-box">
+                            <div class="card-body">
+                                <div>
+                                    <img src="{% static 'images/avatar-3.jpg' %}" alt="" class="rounded">
+                                </div>
+
+                                <div class="mt-3">
+                                    <h5>Hammad Rasheed</h5>
+                                    <P class="text-muted mb-0">FA18-BSE-074</P>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-top">
+                                <div class="d-flex mb-0 team-social-links">
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Facebook">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Linkedin">
+                                            <i class="mdi mdi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Google">
+                                            <i class="mdi mdi-google"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card text-center team-box">
+                            <div class="card-body">
+                                <div>
+                                    <img src="{% static 'images/user.jpg' %}" alt="" class="rounded">
+                                </div>
+
+                                <div class="mt-3">
+                                    <h5>abdullah bin Javed</h5>
+                                    <P class="text-muted mb-0">FA18-BSE-060</P>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-top">
+                                <div class="d-flex mb-0 team-social-links">
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Facebook">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Linkedin">
+                                            <i class="mdi mdi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Google">
+                                            <i class="mdi mdi-google"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- Team end -->
+
+{% endblock %}
