@@ -1,12 +1,13 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Ngo(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.TextField(default="No description available for this ngo.")
+    name = models.CharField(max_length=255, default="No Name")
+    contact_no = models.CharField(max_length=20, default="000 000 000 00")
+    contact_email = models.CharField(max_length=255, null=True, blank=True)
     address = models.TextField(null=True, blank=True)
-    contact_no = models.TextField(max_length=20)
-    contact_email = models.TextField(max_length=255, null=True, blank=True)
+    description = models.TextField(default="No description available for this ngo.")
 
     is_active = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -17,6 +18,9 @@ class Ngo(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('admins:ngo-update', kwargs={'pk': self.pk})
 
 
 class ProjectType(models.Model):
@@ -29,6 +33,9 @@ class ProjectType(models.Model):
 
     def __str__(self):
         return self.name
+
+    # def get_absolute_url(self):
+    #     return reverse('admins:projecttype-detail', kwargs={'pk': self.pk})
 
 
 class Project(models.Model):
@@ -73,7 +80,7 @@ class Donation(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name_plural = "Projects"
+        verbose_name_plural = "Donations"
 
     def __str__(self):
         return str(self.pk)

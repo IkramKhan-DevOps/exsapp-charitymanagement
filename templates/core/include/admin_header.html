@@ -3,7 +3,7 @@
 
 {#DASHBOARD#}
 <li class="nav-item">
-    <a class="nav-link dropdown-toggle arrow-none" href="#">
+    <a class="nav-link dropdown-toggle arrow-none" href="{% url 'admins:dashboard' %}">
         <i class="bx bx-home-circle mr-2"></i>Admin Dashboard
     </a>
 </li>
@@ -17,6 +17,15 @@
     </li>
 {% endif %}
 
+{# ROOT ADMIN #}
+{% if request.user.is_superuser %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'admins:ngo-update' 1 %}">
+            <i class="bx bx-sitemap mr-2"></i>NGO Profile
+        </a>
+    </li>
+{% endif %}
+
 
 {# FEATURES #}
 <li class="nav-item dropdown">
@@ -26,11 +35,9 @@
         <div class="arrow-down"></div>
     </a>
     <div class="dropdown-menu" aria-labelledby="topnav-components">
-        <a href="#" class="dropdown-item">Uses</a>
-        <a href="#" class="dropdown-item">Events</a>
-        <a href="#" class="dropdown-item">Add On's</a>
-        <a href="#" class="dropdown-item">Event Types</a>
-        <a href="#" class="dropdown-item">Payments</a>
+        <a href="{% url 'admins:projecttype-list' %}" class="dropdown-item">Project Types</a>
+        <a href="#" class="dropdown-item">Projects</a>
+        <a href="#" class="dropdown-item">Donations</a>
     </div>
 </li>
 

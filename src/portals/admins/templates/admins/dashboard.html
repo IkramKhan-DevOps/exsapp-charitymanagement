@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="media-body align-self-center">
                                     <div class="text-muted">
-                                        <p class="mb-2">Welcome to EMS</p>
+                                        <p class="mb-2">Welcome to Charity</p>
                                         <h5 class="mb-1">
                                             {% if request.user.first_name and request.user.last_name %}
                                                 {{ request.user.first_name }} {{ request.user_last_name }}
@@ -51,7 +51,7 @@
                                                 <i class="fa fa-users"></i>
                                             </h2>
                                             <small>Total Accounts</small>
-                                            <h5 class="mt-2">100</h5>
+                                            <h5 class="mt-2">{{ total }}</h5>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -60,7 +60,7 @@
                                                 <i class="fa fa-user-lock"></i>
                                             </h2>
                                             <small>Admins</small>
-                                            <h5 class="mt-2">05</h5>
+                                            <h5 class="mt-2">{{ admins }}</h5>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -68,8 +68,17 @@
                                             <h2 class="text-muted mb-0">
                                                 <i class="fa fa-user-check"></i>
                                             </h2>
+                                            <small>Staff</small>
+                                            <h5 class="mt-2">{{ staff }}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div>
+                                            <h2 class="text-muted mb-0">
+                                                <i class="fa fa-user-circle"></i>
+                                            </h2>
                                             <small>Customers</small>
-                                            <h5 class="mb-0">95</h5>
+                                            <h5 class="mt-2">{{ customers }}</h5>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -78,7 +87,7 @@
                                                 <i class="fa fa-arrow-circle-down"></i>
                                             </h2>
                                             <small>Un-Verified</small>
-                                            <h5 class="mb-0">00</h5>
+                                            <h5 class="mt-2">{{ in_active }}</h5>
                                         </div>
                                     </div>
 

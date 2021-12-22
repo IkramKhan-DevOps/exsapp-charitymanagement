@@ -11,7 +11,7 @@ urlpatterns = [
 
     # PORTALS ---------------------------------------------------------- #
     path('', include('src.website.urls', namespace='website')),
-    path('a/', include('src.portals.admins.urls', namespace='admin-portal')),
+    path('a/', include('src.portals.admins.urls', namespace='admins')),
     path('c/', include('src.portals.customer.urls', namespace='customer-portal')),
 ]
 
