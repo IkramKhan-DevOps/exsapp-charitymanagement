@@ -3,30 +3,42 @@
 
 {#DASHBOARD#}
 <li class="nav-item">
-    <a class="nav-link" href="{% url 'admin-portal:dashboard' %}">
-        <i class="bx bxs-dashboard mr-2"></i>Dashboard
+    <a class="nav-link dropdown-toggle arrow-none" href="{% url 'admins:dashboard' %}">
+        <i class="bx bx-home-circle mr-2"></i>Admin Dashboard
     </a>
 </li>
 
-{#QUIZES#}
-<li class="nav-item">
-    <a class="nav-link" href="#">
-        <i class="bx bx-clipboard mr-2"></i>Events
-    </a>
-</li>
+{# ROOT ADMIN #}
+{% if request.user.is_superuser %}
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/">
+            <i class="bx bx-sitemap mr-2"></i>Root Access
+        </a>
+    </li>
+{% endif %}
 
-{#TEAMS#}
-<li class="nav-item">
-    <a class="nav-link" href="#">
-        <i class="mdi mdi-cash mr-2"></i>Payments
-    </a>
-</li>
+{# ROOT ADMIN #}
+{% if request.user.is_superuser %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'admins:ngo-update' 1 %}">
+            <i class="bx bx-sitemap mr-2"></i>NGO Profile
+        </a>
+    </li>
+{% endif %}
 
-{#Learning#}
-<li class="nav-item">
-    <a class="nav-link" href="#">
-        <i class="bx bx-user-circle mr-2"></i>Users
+
+{# FEATURES #}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button"
+       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="bx bx-collection mr-2"></i>Features
+        <div class="arrow-down"></div>
     </a>
+    <div class="dropdown-menu" aria-labelledby="topnav-components">
+        <a href="{% url 'admins:projecttype-list' %}" class="dropdown-item">Project Types</a>
+        <a href="#" class="dropdown-item">Projects</a>
+        <a href="#" class="dropdown-item">Donations</a>
+    </div>
 </li>
 
 

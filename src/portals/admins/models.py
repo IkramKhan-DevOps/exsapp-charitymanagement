@@ -72,7 +72,7 @@ class Donation(models.Model):
     )
     is_completed = models.BooleanField(
         default=False, help_text="Make Sure you are careful about this check? If you check this it will mark this "
-                                 "transaction as successful so if user has paid then you can check this."
+                                 "transasction as successful so if user has paid then you can check this."
     )
 
     is_active = models.BooleanField(default=True)
