@@ -22,6 +22,10 @@ class User(AbstractUser):
     address = models.TextField(blank=True, null=True)
     phone_number = models.CharField(max_length=15, null=True, blank=True)
 
+    donations_total = models.FloatField(default=0)
+    donations_amount = models.FloatField(default=0)
+    donations_projects = models.FloatField(default=0)
+
     class Meta:
         verbose_name_plural = "Users"
 
