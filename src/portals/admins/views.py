@@ -56,3 +56,45 @@ class ProjectTypeUpdateView(UpdateView):
 class ProjectTypeDeleteView(DeleteView):
     model = ProjectType
     success_url = reverse_lazy('admins:projecttype-list')
+
+
+""" GENERIC VIEWS CRUD > PROJECT """
+
+
+class ProjectListView(ListView):
+    queryset = Project.objects.all()
+
+
+class ProjectCreateView(CreateView):
+    model = Project
+    fields = '__all__'
+    success_url = reverse_lazy('admins:project-list')
+
+
+class ProjectUpdateView(UpdateView):
+    model = Project
+    fields = '__all__'
+    success_url = reverse_lazy('admins:project-list')
+
+
+class ProjectDeleteView(DeleteView):
+    model = Project
+    success_url = reverse_lazy('admins:project-list')
+
+
+""" GENERIC VIEWS CRUD > DONATION """
+
+
+class DonationListView(ListView):
+    queryset = Donation.objects.all()
+
+
+class DonationUpdateView(UpdateView):
+    model = Donation
+    fields = '__all__'
+    success_url = reverse_lazy('admins:donation-list')
+
+
+class DonationDeleteView(DeleteView):
+    model = Donation
+    success_url = reverse_lazy('admins:donation-list')

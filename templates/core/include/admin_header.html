@@ -36,8 +36,8 @@
     </a>
     <div class="dropdown-menu" aria-labelledby="topnav-components">
         <a href="{% url 'admins:projecttype-list' %}" class="dropdown-item">Project Types</a>
-        <a href="#" class="dropdown-item">Projects</a>
-        <a href="#" class="dropdown-item">Donations</a>
+        <a href="{% url 'admins:project-list' %}" class="dropdown-item">Projects</a>
+        <a href="{% url 'admins:donation-list' %}" class="dropdown-item">Donations</a>
     </div>
 </li>
 
