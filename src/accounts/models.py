@@ -10,7 +10,7 @@ class User(AbstractUser):
         ('o', 'Other'),
     )
 
-    is_customer = models.BooleanField(default=False, help_text="This account belongs to customer")
+    is_customer = models.BooleanField(default=True, help_text="This account belongs to customer")
 
     profile_image = models.ImageField(
         null=True, blank=True,

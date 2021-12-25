@@ -98,3 +98,10 @@ class DonationUpdateView(UpdateView):
 class DonationDeleteView(DeleteView):
     model = Donation
     success_url = reverse_lazy('admins:donation-list')
+
+
+class PaymentVerificationEasyPaisa(UpdateView):
+    template_name = 'admins/easypaisa_payment_verification.html'
+    model = Donation
+    fields = ['is_completed']
+    success_url = reverse_lazy('admins:donation-list')

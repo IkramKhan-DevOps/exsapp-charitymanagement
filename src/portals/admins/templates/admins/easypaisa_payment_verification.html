@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block base_title %} Payment Verification {% endblock %}
+{% block page_heading %}
+    Payment Verification
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-body">
+
+            {{ form|crispy }}
+            <button class="btn btn-primary" type="submit">
+                Submit
+            </button>
+        </div>
+    </div>
+
+{% endblock %}
+
