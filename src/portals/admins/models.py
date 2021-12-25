@@ -68,11 +68,11 @@ class Donation(models.Model):
     transaction_id = models.CharField(
         max_length=1000, null=False, blank=False,
         help_text="Enter transaction id here, transaction id will be provided by your service provider "
-                  "i.e EasyPaisa provide you through sms over a successful transaction"
+                  "i.e EasyPaisa provide you through sms over a successful transaction", unique=True
     )
     is_completed = models.BooleanField(
         default=False, help_text="Make Sure you are careful about this check? If you check this it will mark this "
-                                 "transasction as successful so if user has paid then you can check this."
+                                 "transaction as successful so if user has paid then you can check this."
     )
 
     is_active = models.BooleanField(default=True)

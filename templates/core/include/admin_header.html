@@ -8,6 +8,21 @@
     </a>
 </li>
 
+
+{# FEATURES #}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button"
+       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="bx bx-collection mr-2"></i>Features
+        <div class="arrow-down"></div>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="topnav-components">
+        <a href="{% url 'admins:projecttype-list' %}" class="dropdown-item">Project Types</a>
+        <a href="{% url 'admins:project-list' %}" class="dropdown-item">Projects</a>
+        <a href="{% url 'admins:donation-list' %}" class="dropdown-item">Donations</a>
+    </div>
+</li>
+
 {# ROOT ADMIN #}
 {% if request.user.is_superuser %}
     <li class="nav-item">
@@ -26,20 +41,16 @@
     </li>
 {% endif %}
 
+{# ROOT ADMIN #}
+{% if request.user.is_superuser %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'admins:payment-verification-easypaisa' %}">
+            <i class="bx bx-analyse mr-2"></i>Transaction Verification
+        </a>
+    </li>
+{% endif %}
 
-{# FEATURES #}
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button"
-       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="bx bx-collection mr-2"></i>Features
-        <div class="arrow-down"></div>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="topnav-components">
-        <a href="{% url 'admins:projecttype-list' %}" class="dropdown-item">Project Types</a>
-        <a href="{% url 'admins:project-list' %}" class="dropdown-item">Projects</a>
-        <a href="{% url 'admins:donation-list' %}" class="dropdown-item">Donations</a>
-    </div>
-</li>
+
 
 
 {# ------------------------------------------------------------------------------------------------------------------ #}

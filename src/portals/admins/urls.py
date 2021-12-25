@@ -21,6 +21,6 @@ urlpatterns = [
     path('donation/<int:pk>/change/', DonationUpdateView.as_view(), name='donation-update'),
     path('donation/<int:pk>/delete/', DonationDeleteView.as_view(), name='donation-delete'),
 
-    path('payment/verification/easy-paisa/', PaymentVerificationEasyPaisa.as_view(), name='payment-verification-easypaisa')
+    path('payment/verification/easypaisa/', PaymentVerificationEasyPaisa.as_view(), name='payment-verification-easypaisa')
 
 ]
