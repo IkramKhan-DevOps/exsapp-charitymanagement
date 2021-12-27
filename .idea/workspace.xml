@@ -22,10 +22,11 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/portals/admins/templates/admins" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/portals/customer/templates/customer" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GIT\cw-dj-charity\src\portals\customer\templates\customer" />
       <recent name="D:\GIT\cw-dj-charity\src\portals\admins\templates\admins" />
     </key>
   </component>
@@ -84,7 +85,8 @@
       <workItem from="1640240124350" duration="2937000" />
       <workItem from="1640355971619" duration="636000" />
       <workItem from="1640426799500" duration="2306000" />
-      <workItem from="1640449276080" duration="4266000" />
+      <workItem from="1640449276080" duration="5297000" />
+      <workItem from="1640599131362" duration="1336000" />
     </task>
     <servers />
   </component>

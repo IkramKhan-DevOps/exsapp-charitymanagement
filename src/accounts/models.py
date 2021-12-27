@@ -11,7 +11,6 @@ class User(AbstractUser):
     )
 
     is_customer = models.BooleanField(default=True, help_text="This account belongs to customer")
-
     profile_image = models.ImageField(
         null=True, blank=True,
         upload_to='images/profiles/',
