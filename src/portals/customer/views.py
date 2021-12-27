@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models import Sum
 from django.forms import ModelForm
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
@@ -17,6 +18,10 @@ class DashboardView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(DashboardView, self).get_context_data(**kwargs)
+        context['donations_count'] = Donation.objects.filter(user=self.request.user).count()
+        context['donations_amount_count'] = Donation.objects.filter(user=self.request.user, is_completed=True).aggregate(Sum('amount'))
+        context['donations_projects'] = Donation.objects.filter(user=self.request.user, is_completed=True).count()
+        context['donations_pending'] = Donation.objects.filter(user=self.request.user, is_completed=False).count()
         return context
 
 

@@ -50,17 +50,8 @@
                                             <h2 class="text-muted mb-0">
                                                 <i class="fa fa-clipboard-list"></i>
                                             </h2>
-                                            <small>Donations</small>
-                                            <h5 class="mt-2">100</h5>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div>
-                                            <h2 class="text-muted mb-0">
-                                                <i class="fa fa-clipboard-check"></i>
-                                            </h2>
-                                            <small>Amount</small>
-                                            <h5 class="mt-2">05</h5>
+                                            <small>Total Donations</small>
+                                            <h5 class="">{{ donations_count }}</h5>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -68,17 +59,26 @@
                                             <h2 class="text-muted mb-0">
                                                 <i class="fa fa-clipboard"></i>
                                             </h2>
-                                            <small>Projects</small>
-                                            <h5 class="mb-0">00</h5>
+                                            <small>Approved</small>
+                                            <h5 class="mb-0">{{ donations_projects }}</h5>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div>
                                             <h2 class="text-muted mb-0">
-                                                <i class="fa fa-arrow-circle-down text-danger"></i>
+                                                <i class="fa fa-exclamation-triangle"></i>
                                             </h2>
                                             <small>Pending</small>
-                                            <h5 class="mb-0">00</h5>
+                                            <h5 class="mb-0">{{ donations_pending }}</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col text-success border-left">
+                                        <div>
+                                            <h2 class="text-muted mb-0">
+                                                <i class="fa fa-hands-helping text-success"></i>
+                                            </h2>
+                                            <small>Amount</small>
+                                            <h5 class="text-success">$ {{ donations_amount_count.amount__sum }}</h5>
                                         </div>
                                     </div>
 
