@@ -25,21 +25,21 @@
                             <div class="cols m-2">
                                 <div class="p-4 border rounded">
                                     <h1 class="text-white"><i class="fa fa-users"></i></h1>
-                                    <p class="mb-0">0000</p>
+                                    <p class="mb-0">00{{ users }}</p>
                                 </div>
                             </div>
 
                             <div class="cols m-2">
                                 <div class="p-4 border rounded">
                                     <h1 class="text-white"><i class="fa fa-list"></i></h1>
-                                    <p class="mb-0">0000</p>
+                                    <p class="mb-0">00{{ projects_count }}</p>
                                 </div>
                             </div>
 
                             <div class="cols m-2">
                                 <div class="p-4 border rounded">
                                     <h1 class="text-white"><i class="fa fa-coins"></i></h1>
-                                    <p class="mb-0">0000</p>
+                                    <p class="mb-0">{{ funds.donation_amount__sum }}</p>
                                 </div>
                             </div>
 
@@ -83,14 +83,14 @@
                                 <div class="d-flex mb-0 team-social-links">
                                     <div class="flex-fill">
                                         <b>
-                                            <a href="#" class="text-primary">
+                                            <a href="{% url 'website:project-detail' project.pk %}" class="text-primary">
                                                 <i class="mdi mdi-link"></i> View
                                             </a>
                                         </b>
                                     </div>
                                     <div class="flex-fill">
                                         <b>
-                                            <a href="#" class="text-warning">
+                                            <a href="{% url 'customer-portal:donation-create' %}" class="text-warning">
                                                 <i class="fa fa-coins"></i> Donate
                                             </a>
                                         </b>
@@ -257,14 +257,14 @@
                                 <div class="d-flex mb-0 team-social-links">
                                     <div class="flex-fill">
                                         <b>
-                                            <a href="#" class="text-primary">
+                                            <a href="{% url 'website:project-detail' project.pk %}" class="text-primary">
                                                 <i class="mdi mdi-link"></i> View
                                             </a>
                                         </b>
                                     </div>
                                     <div class="flex-fill">
                                         <b>
-                                            <a href="#" class="text-warning">
+                                            <a href="{% url 'customer-portal:donation-create' %}" class="text-warning">
                                                 <i class="fa fa-coins"></i> Donate
                                             </a>
                                         </b>
