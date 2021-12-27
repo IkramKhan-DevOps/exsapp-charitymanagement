@@ -1,7 +1,9 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Q
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
+from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.generic import (
     CreateView, ListView, DetailView, UpdateView, DeleteView,
@@ -15,6 +17,7 @@ from .models import (
 """ GENERIC VIEWS CUSTOM > DASHBOARD AND NGO """
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class DashboardView(TemplateView):
     template_name = 'admins/dashboard.html'
 
@@ -28,6 +31,7 @@ class DashboardView(TemplateView):
         return context
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class NGOUpdateView(UpdateView):
     model = Ngo
     fields = '__all__'
@@ -39,22 +43,26 @@ class NGOUpdateView(UpdateView):
 """ GENERIC VIEWS CRUD > PROJECT TYPE """
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class ProjectTypeListView(ListView):
     queryset = ProjectType.objects.all()
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class ProjectTypeCreateView(CreateView):
     model = ProjectType
     fields = '__all__'
     success_url = reverse_lazy('admins:projecttype-list')
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class ProjectTypeUpdateView(UpdateView):
     model = ProjectType
     fields = '__all__'
     success_url = reverse_lazy('admins:projecttype-list')
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class ProjectTypeDeleteView(DeleteView):
     model = ProjectType
     success_url = reverse_lazy('admins:projecttype-list')
@@ -63,22 +71,26 @@ class ProjectTypeDeleteView(DeleteView):
 """ GENERIC VIEWS CRUD > PROJECT """
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class ProjectListView(ListView):
     queryset = Project.objects.all()
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class ProjectCreateView(CreateView):
     model = Project
     fields = '__all__'
     success_url = reverse_lazy('admins:project-list')
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class ProjectUpdateView(UpdateView):
     model = Project
     fields = '__all__'
     success_url = reverse_lazy('admins:project-list')
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class ProjectDeleteView(DeleteView):
     model = Project
     success_url = reverse_lazy('admins:project-list')
@@ -87,16 +99,19 @@ class ProjectDeleteView(DeleteView):
 """ GENERIC VIEWS CRUD > DONATION """
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class DonationListView(ListView):
     queryset = Donation.objects.all()
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class DonationUpdateView(UpdateView):
     model = Donation
     fields = '__all__'
     success_url = reverse_lazy('admins:donation-list')
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class DonationDeleteView(DeleteView):
     model = Donation
     success_url = reverse_lazy('admins:donation-list')
@@ -105,6 +120,7 @@ class DonationDeleteView(DeleteView):
 """ VIEW > PAYMENTS """
 
 
+@method_decorator(user_passes_test(lambda u: u.is_superuser), name='dispatch')
 class PaymentVerificationEasyPaisa(View):
 
     def get(self, request):
