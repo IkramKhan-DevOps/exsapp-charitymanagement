@@ -7,20 +7,42 @@
         <div class="bg-overlay bg-primary"></div>
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="text-white-50">
+                <div class="col-12">
+                    <div class="text-white-50 text-center">
                         <h1 class="text-white font-weight-semibold mb-3 hero-title">
-                            Charity Management System | CMS
+                            Global Charity Platform
                         </h1>
-                        <p class="font-size-14">
-                            Be the reason of someone to smile
-                        </p>
+                        <blockquote class="blockquote">
+                            <p>
+                                O you who believe! Do not cancel your charity by reminders of your generosity or by
+                                injury, like those who spend their substance to be seen of men, but believe neither in
+                                Allah nor in the Last Day
+                            </p>
+                            <footer class="blockquote-footer text-white">Al-Quran <cite title="Source Title">(2:264)</cite></footer>
+                        </blockquote>
+                        <div class="row justify-content-center">
 
-                        <div class="button-items mt-4">
-                            <a href="/accounts/signup/"
-                               class="btn btn-success">Join Now</a>
-                            <a href="/accounts/login/"
-                               class="btn btn-light">Login</a>
+                            <div class="cols m-2">
+                                <div class="p-4 border rounded">
+                                    <h1 class="text-white"><i class="fa fa-users"></i></h1>
+                                    <p class="mb-0">0000</p>
+                                </div>
+                            </div>
+
+                            <div class="cols m-2">
+                                <div class="p-4 border rounded">
+                                    <h1 class="text-white"><i class="fa fa-list"></i></h1>
+                                    <p class="mb-0">0000</p>
+                                </div>
+                            </div>
+
+                            <div class="cols m-2">
+                                <div class="p-4 border rounded">
+                                    <h1 class="text-white"><i class="fa fa-coins"></i></h1>
+                                    <p class="mb-0">0000</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -30,22 +52,60 @@
         <!-- end container -->
     </section>
 
-        <!-- description start -->
-        <section class="section" id="description">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h4><b>{% lorem 60 w %}</b></h4>
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mb-5">
+                        <div class="small-title">Most Recent</div>
+                        <h4>Top Donation Project</h4>
                     </div>
                 </div>
-                <!-- end row -->
             </div>
-            <!-- end container -->
-        </section>
-        <!-- description end -->
+            <!-- end row -->
 
-    <!-- Roadmap start -->
+            <div class="col-lg-12 row">
+                {% for project in projects %}
+                    <div class="col-4">
+                        <div class="card team-box">
+                            <div class="card-body">
+
+                                <div class="mt-3">
+                                    <h5 class="text-center">{{ project.name }}</h5>
+                                    <P class="text-justify mb-0">{{ project.description|truncatechars:300 }}</P>
+                                    <div class="progress mt-4">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%"
+                                             aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-top text-center">
+                                <div class="d-flex mb-0 team-social-links">
+                                    <div class="flex-fill">
+                                        <b>
+                                            <a href="#" class="text-primary">
+                                                <i class="mdi mdi-link"></i> View
+                                            </a>
+                                        </b>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <b>
+                                            <a href="#" class="text-warning">
+                                                <i class="fa fa-coins"></i> Donate
+                                            </a>
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+
     <section class="section bg-white" id="roadmap">
         <div class="container">
             <div class="row">
@@ -166,131 +226,58 @@
         </div>
         <!-- end container -->
     </section>
-    <!-- Roadmap end -->
 
-
-    <!-- Team start -->
-    <section class="section" id="team">
+    <section class="section" id="projects-all">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center mb-5">
-                        <div class="small-title">Team</div>
-                        <h4>Meet our team</h4>
+                        <div class="small-title">Need Help</div>
+                        <h4>Global Donation Projects</h4>
                     </div>
                 </div>
             </div>
-            <!-- end row -->
 
-            <div class="col-lg-12">
-                <div class="owl-carousel owl-theme events navs-carousel" id="team-carousel">
-
-                    <div class="item">
-                        <div class="card text-center team-box">
+            <div class="col-lg-12 row">
+                {% for project in projects %}
+                    <div class="col-4">
+                        <div class="card border">
                             <div class="card-body">
-                                <div>
-                                    <img src="{% static 'images/avatar-2.jpg' %}" alt="" class="rounded">
-                                </div>
 
                                 <div class="mt-3">
-                                    <h5>Full Name</h5>
-                                    <P class="text-muted mb-0">FA18-BSE-000</P>
+                                    <h5 class="text-center">{{ project.name }}</h5>
+                                    <P class="text-justify mb-0">{{ project.description|truncatechars:300 }}</P>
+                                    <div class="progress mt-4">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%"
+                                             aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="card-footer bg-transparent border-top">
+                            <div class="card-footer bg-transparent border-top text-center">
                                 <div class="d-flex mb-0 team-social-links">
                                     <div class="flex-fill">
-                                        <a href="#" data-toggle="tooltip" title="Facebook">
-                                            <i class="mdi mdi-facebook"></i>
-                                        </a>
+                                        <b>
+                                            <a href="#" class="text-primary">
+                                                <i class="mdi mdi-link"></i> View
+                                            </a>
+                                        </b>
                                     </div>
                                     <div class="flex-fill">
-                                        <a href="#" data-toggle="tooltip" title="Linkedin">
-                                            <i class="mdi mdi-linkedin"></i>
-                                        </a>
-                                    </div>
-                                    <div class="flex-fill">
-                                        <a href="#" data-toggle="tooltip" title="Google">
-                                            <i class="mdi mdi-google"></i>
-                                        </a>
+                                        <b>
+                                            <a href="#" class="text-warning">
+                                                <i class="fa fa-coins"></i> Donate
+                                            </a>
+                                        </b>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="card text-center team-box">
-                            <div class="card-body">
-                                <div>
-                                    <img src="{% static 'images/avatar-3.jpg' %}" alt="" class="rounded">
-                                </div>
-
-                                <div class="mt-3">
-                                    <h5>Full Name</h5>
-                                    <P class="text-muted mb-0">FA18-BSE-000</P>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-transparent border-top">
-                                <div class="d-flex mb-0 team-social-links">
-                                    <div class="flex-fill">
-                                        <a href="#" data-toggle="tooltip" title="Facebook">
-                                            <i class="mdi mdi-facebook"></i>
-                                        </a>
-                                    </div>
-                                    <div class="flex-fill">
-                                        <a href="#" data-toggle="tooltip" title="Linkedin">
-                                            <i class="mdi mdi-linkedin"></i>
-                                        </a>
-                                    </div>
-                                    <div class="flex-fill">
-                                        <a href="#" data-toggle="tooltip" title="Google">
-                                            <i class="mdi mdi-google"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card text-center team-box">
-                            <div class="card-body">
-                                <div>
-                                    <img src="{% static 'images/user.jpg' %}" alt="" class="rounded">
-                                </div>
-
-                                <div class="mt-3">
-                                    <h5>Full Name</h5>
-                                    <P class="text-muted mb-0">FA18-BSE-000</P>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-transparent border-top">
-                                <div class="d-flex mb-0 team-social-links">
-                                    <div class="flex-fill">
-                                        <a href="#" data-toggle="tooltip" title="Facebook">
-                                            <i class="mdi mdi-facebook"></i>
-                                        </a>
-                                    </div>
-                                    <div class="flex-fill">
-                                        <a href="#" data-toggle="tooltip" title="Linkedin">
-                                            <i class="mdi mdi-linkedin"></i>
-                                        </a>
-                                    </div>
-                                    <div class="flex-fill">
-                                        <a href="#" data-toggle="tooltip" title="Google">
-                                            <i class="mdi mdi-google"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                {% endfor %}
             </div>
             <!-- end row -->
         </div>
         <!-- end container -->
     </section>
-    <!-- Team end -->
 
 {% endblock %}

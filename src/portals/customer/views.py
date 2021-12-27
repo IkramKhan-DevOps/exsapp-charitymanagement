@@ -1,7 +1,16 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, TemplateView
 
 from src.portals.admins.models import Donation, Project
+
+
+class NewsFeedView(TemplateView):
+    template_name = 'customer/news-feed.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(NewsFeedView, self).get_context_data(**kwargs)
+        context['projects'] = Project.objects.filter(is_completed=False)
+        return context
 
 
 class DonationListView(ListView):

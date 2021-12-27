@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.urls import reverse
 
 
@@ -41,6 +42,7 @@ class ProjectType(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(default="No description available.")
+    slug = models.SlugField(max_length=100, null=False, blank=True, unique=True)
     project_type = models.ForeignKey('ProjectType', on_delete=models.SET_NULL, null=True, blank=False)
     required_amount = models.FloatField(default=1000)
     donation_amount = models.FloatField(default=0)
@@ -55,6 +57,11 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        return super().save(*args, **kwargs)
 
 
 class Donation(models.Model):
