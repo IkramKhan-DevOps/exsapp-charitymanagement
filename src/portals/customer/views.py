@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, TemplateView
 
@@ -24,9 +25,10 @@ class DonationListView(ListView):
 class DonationCreateView(CreateView):
     model = Donation
     template_name = 'customer/donation_form.html'
-    fields = ['project', 'payment_method', 'transaction_id', 'is_active']
+    fields = ['payment_method', 'transaction_id', 'is_active']
     success_url = reverse_lazy("customer-portal:donation-list")
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        form.instance.project = get_object_or_404(Project.objects.all(), pk=self.kwargs['pk'])
         return super().form_valid(form)

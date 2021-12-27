@@ -11,6 +11,6 @@ urlpatterns = [
         name='dashboard'
     ),
     path('donation/', DonationListView.as_view(), name='donation-list'),
-    path('donation/add/', DonationCreateView.as_view(), name='donation-create'),
+    path('project/<int:pk>/donate/', DonationCreateView.as_view(), name='donate'),
 
 ]
