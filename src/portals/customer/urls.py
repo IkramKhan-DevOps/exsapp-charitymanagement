@@ -10,7 +10,7 @@ urlpatterns = [
         TemplateView.as_view(template_name='customer/dashboard.html'),
         name='dashboard'
     ),
-    path('my/donation/', DonationListView.as_view(), name='donations-list'),
-    path('my/donation/add/', DonationCreateView.as_view(), name='donation-create'),
+    path('donation/', DonationListView.as_view(), name='donation-list'),
+    path('donation/add/', DonationCreateView.as_view(), name='donation-create'),
 
 ]

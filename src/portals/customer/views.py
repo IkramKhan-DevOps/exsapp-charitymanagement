@@ -1,6 +1,7 @@
-from django.views.generic import ListView, UpdateView, CreateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView
 
-from src.portals.admins.models import Donation
+from src.portals.admins.models import Donation, Project
 
 
 class DonationListView(ListView):
@@ -12,6 +13,11 @@ class DonationListView(ListView):
 
 
 class DonationCreateView(CreateView):
-    queryset = Donation.objects.all()
+    model = Donation
     template_name = 'customer/donation_form.html'
     fields = ['project', 'payment_method', 'transaction_id', 'is_active']
+    success_url = reverse_lazy("customer-portal:donation-list")
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)

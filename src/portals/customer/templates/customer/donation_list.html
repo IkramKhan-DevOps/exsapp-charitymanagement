@@ -23,10 +23,9 @@
                             <th>ID</th>
                             <th>Project</th>
                             <th>Amount</th>
-                            <th>TX id</th>
+                            <th>TX ID</th>
                             <th>Created On</th>
                             <th>Status</th>
-                            <th></th>
                         </tr>
                         </thead>
                         <tbody class="">
@@ -40,17 +39,10 @@
                                 <td>{{ row.created_on }}</td>
                                 <td>
                                     {% if row.is_completed %}
-                                        <i class="fa fa-check text-success"></i>
+                                        <b class="text-success"><i class="fa fa-check-circle"></i> Verified</b>
                                     {% else %}
-                                        <i class="fa fa-times text-danger"></i>
+                                        <b class="text-danger"><i class="fa fa-times-circle"></i> Un-Verified</b>
                                     {% endif %}
-                                </td>
-                                <td>
-                                    <a href="{% url 'admins:donation-update' row.pk %}">
-                                        <i class="fa fa-edit"></i></a>
-                                    <a class="text-danger"
-                                       href="{% url 'admins:donation-delete' row.pk %}">
-                                        <i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
 

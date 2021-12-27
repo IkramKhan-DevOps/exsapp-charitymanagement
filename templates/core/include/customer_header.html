@@ -1,24 +1,21 @@
 {% load static %}
 
 
-{#DASHBOARD#}
 <li class="nav-item">
     <a class="nav-link" href="{% url 'customer-portal:dashboard' %}">
         <i class="bx bxs-dashboard mr-2"></i>Dashboard
     </a>
 </li>
 
-{#QUIZES#}
 <li class="nav-item">
-    <a class="nav-link" href="#">
-        <i class="bx bx-clipboard mr-2"></i>Projects
+    <a class="nav-link" href="{% url 'customer-portal:donation-list' %}">
+        <i class="bx bx-clipboard mr-2"></i>Donations
     </a>
 </li>
 
-{#QUIZES#}
 <li class="nav-item">
-    <a class="nav-link" href="#">
-        <i class="bx bx-clipboard mr-2"></i>Donations
+    <a class="nav-link" href="{% url 'customer-portal:donation-create' %}">
+        <i class="bx bx-help-circle mr-2"></i>Donate
     </a>
 </li>
 
