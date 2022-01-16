@@ -11,6 +11,15 @@ Following are the features used in this application
 5. Customer Portal
 6. All-Auth (Google and Email)
 
+## HOW TO RUN LOCALLY
+```python
+install python 3.8 https://www.python.org/downloads/release/python-380/
+cd directory
+pip install -r requirements.txt
+py manage.py runserver
 
-### NOTE
-Application is free to use - developed and designed by https://exarth.com/
+cd directory
+python file_name.py
+```
+## Note
+Free To use no restrictions - developed and designed by https://exarth.com
